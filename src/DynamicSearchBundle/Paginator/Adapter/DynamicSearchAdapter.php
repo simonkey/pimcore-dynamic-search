@@ -34,7 +34,7 @@ class DynamicSearchAdapter implements AdapterInterface
         $this->documentNormalizer = $documentNormalizer;
     }
 
-    public function getItems(int $offset, int $itemCountPerPage): array
+    public function getItems($offset, $itemCountPerPage): array
     {
         $data = $this->rawResult->getData();
 

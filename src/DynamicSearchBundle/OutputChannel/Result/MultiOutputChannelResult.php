@@ -15,12 +15,12 @@ class MultiOutputChannelResult implements MultiOutputChannelResultInterface
         $this->runtimeQueryProvider = $runtimeQueryProvider;
     }
 
-    public function getResults()
+    public function getResults(): array
     {
         return $this->results;
     }
 
-    public function getRuntimeQueryProvider()
+    public function getRuntimeQueryProvider(): RuntimeQueryProviderInterface
     {
         return $this->runtimeQueryProvider;
     }
