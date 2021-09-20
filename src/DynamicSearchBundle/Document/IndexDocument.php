@@ -20,7 +20,10 @@ class IndexDocument
         $this->documentConfiguration = $documentConfiguration;
     }
 
-    public function getDocumentId(): ?int
+    /**
+     * @return int|string|null
+     */
+    public function getDocumentId()
     {
         return $this->resourceMeta instanceof ResourceMetaInterface ? $this->resourceMeta->getDocumentId() : null;
     }
