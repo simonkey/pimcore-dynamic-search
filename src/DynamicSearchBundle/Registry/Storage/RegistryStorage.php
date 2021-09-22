@@ -6,7 +6,7 @@ class RegistryStorage
 {
     protected array $store = [];
 
-    public function store($service, string $requiredInterface, string $namespace, string $identifier, ?string $alias = null, bool $allowMultipleAppearance = false)
+    public function store($service, string $requiredInterface, string $namespace, ?string $identifier = null, ?string $alias = null, bool $allowMultipleAppearance = false)
     {
         if (!in_array($requiredInterface, class_implements($service), true)) {
             throw new \InvalidArgumentException(
@@ -54,7 +54,7 @@ class RegistryStorage
             })) > 0;
     }
 
-    public function get(string $namespace, string $identifier)
+    public function get(string $namespace, ?string $identifier)
     {
         if (null !== $byIdentifier = $this->getByIdentifier($namespace, $identifier)) {
             return $byIdentifier;
